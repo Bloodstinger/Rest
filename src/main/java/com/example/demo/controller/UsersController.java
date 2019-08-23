@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/user")
 public class UsersController {
 
     private final UserService userService;
@@ -22,12 +22,12 @@ public class UsersController {
         this.userService = userService;
     }
 
-    @GetMapping("/getAllUsers")
+    @GetMapping("/get")
     public List<User> getAllUsers() {
         return userService.getAll();
     }
 
-    @PostMapping("/encodeUser")
+    @PostMapping("/add")
     public User encodeUser(@RequestBody User user) {
         String encodedPassword = userService.encode(user.getPassword());
         user.setPassword(encodedPassword);

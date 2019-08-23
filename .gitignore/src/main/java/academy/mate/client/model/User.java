@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class User {
 
-    private long id;
+    private Long id;
 
     private String username;
 
